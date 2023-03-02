@@ -1,0 +1,79 @@
+<div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px">
+   <div class='col-6'>
+  <img  class="img-fluid" src={{organizations["image"]}} 
+  style="border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;"
+  >
+   </div>
+  <div class='col-3'>
+  <h4 style="color:rgb(120,120,120); margin-bottom:4px;">{{organizations['org_name']}}
+  </h4>
+   {% if 'country' in organizations %}
+          <div>
+            <b>Location: </b>{{organizations['country']}}
+          </div>
+    {% endif %}
+       <div>
+            <b>About: </b>{{organizations['description']}}
+          </div>
+    </div>
+
+    <div class='col-3'>
+    <button type="button" class="mt-4 btn btn-outline-primary">Open</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card" style="width:18rem;">
+<img src={{organizations["image"]}} alt="forasoft">
+  <div>
+    <div class="card-body">
+    <h5 class="card-title ">{{organizations['org_name']}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p><b>Location: </b>{{organizations['country']}}</p>
+ </div>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+ -->
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<!-- 
+
+
+<div class="border-bottom" style="margin-bottom:16px;padding-bottom:8px">
+  <h4 style="color:rgb(120,120,120); margin-bottom:4px;">{{organizations['org_name']}}
+  </h4>
+   {% if 'country' in organizations %}
+          <div>
+            <b>Location: </b>{{organizations['country']}}
+          </div>
+   {% endif %}
+</div>
+
+ -->
