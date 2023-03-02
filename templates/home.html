@@ -7,26 +7,41 @@
   </head>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <body>
+    {% include 'nav.html' %}
+       <img class="img-fluid" id="banner" src="https://partners-website.slavchetverikov.repl.co/static/banner.jpeg" height='320'>
     <div class="container">
     <h1 class="text-center mt-2 mb-4"><strong>{{company_name}}</strong> Management</h1>
-    <img class="img-fluid" id="banner" src="https://partners-website.slavchetverikov.repl.co/static/banner.jpeg" height='320'>
+ 
       <style>
         h1 strong {
           color:  rgb(51, 102, 255)
 ;
         }
         #banner{
-          height: 360px;
+          height: 340px;
           width: 100%;
           object-fit: cover;
+          margin-bottom: 16px;
         }
+        .maininfo {
+
+        }
+        
         .btn-my {
           background-color: rgb(51, 102, 255) !important;
         }
       </style>
     <div id='container'>
-    <h2 class="text-center mt-5 mb-4">Welcome!</h2>
-    <p class="lead">Here you can effectively manage your partners and manage your collaboration within different organizations.</p>
+      <div class='row' style="margin-bottom:16px">
+        <div class='col-7'>
+    <p class="lead maininfo">A platform for your partners administration and collaboration within different organizations.</p>
+<button class=" mt-4 btn-my btn btn-primary btn-lg">Create Partner</button>
+        </div>
+        <div class='col-4'>
+        <img src="/static/ipad.jpg" style="height:270px; border-radius:4px" >
+        </div>
+      </div>
+      
     <h2 class="text-center mt-5 mb-4">My partners</h2>
       <div>
        {%for partners in partners %}
@@ -42,8 +57,8 @@
       </div>
     <div style='text-align:center'>
         <button class=" mt-4 btn-my btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2023. V. Chetverikov</p>
     </div>
+      {% include "footer.html" %}
   </body>
 </html>
 
