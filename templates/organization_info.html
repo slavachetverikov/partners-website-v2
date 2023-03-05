@@ -1,18 +1,17 @@
 <div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px">
-   <div class='col-5'>
-  <img  class="img-fluid grow" src={{organizations["image"]}}>
+   <div class='col-4'>
+  <img  class="img-fluid grow" src={{organizations['image']}}>
 <style>
   .img-fluid { border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 300px;
              }
-  
   .grow { transition: all .2s ease-in-out; }
   .grow:hover { transform: scale(1.1); }
  </style>       
    </div>
-  <div class='col-5'>
+  <div class='col-6'>
   <h4 style="color:rgb(120,120,120); margin-bottom:4px;">{{organizations['org_name']}}
   </h4>
    {% if 'country' in organizations %}
@@ -21,7 +20,7 @@
           </div>
     {% endif %}
        <div>
-            <b>About: </b>{{organizations['description']}}
+            <b>About: </b>{{organizations['info']}}
           </div>
     </div>
 
