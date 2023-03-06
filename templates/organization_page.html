@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{organization.org_name}} - M-Partner
+    </title>
+    {% include 'bootstap.html' %}
+    {% include 'nav.html' %}
+    {% include 'banner2.html' %}
+  </style>
+  </head>
+  <body>
+  <div class="container">
+  <h1 class="text-center mt-2 mb-4">Partner Information</h1>
+     <div class="row">
+        <div class="col">
+  <h3>Organization</h3>    
+  <p>{{organization.org_name}}<p>
+  <h3>Country</h3>  
+  <p>{{organization.country}}<p>
+  <h3>Trade code</h3>
+  <p>{{organization.trade_code}}<p>
+    </div>
+    <div class="col">
+      <img  class="img-fluid grow mb-3" src={{organization.image}}>
+      <style>
+        .img-fluid { border: 1px solid #ddd;
+                    border-radius: 4px;
+                    padding: 5px;
+                    width: 300px;
+                   }
+        .grow { transition: all .2s ease-in-out; }
+        .grow:hover { transform: scale(1.1); }
+        </style>
+  <h3>About</h3> 
+     <p>{{organization.info}}<p> 
+         </div>
+  </div>
+</div>
+    {% include "footer.html" %}
+  </body>
+</html>
+

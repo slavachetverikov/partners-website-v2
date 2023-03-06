@@ -16,7 +16,7 @@ engine = create_engine(
 
 def load_partners_from_db():
   with engine.connect() as connection:
-    result = connection.execute(text("select * from partner"))
+    result = connection.execute(text("SELECT * FROM partner"))
     column_names = result.keys()
     partners = []
     for row in result.all():
@@ -25,10 +25,42 @@ def load_partners_from_db():
     
 def load_organizations_from_db():
   with engine.connect() as connection:
-    result_2 = connection.execute(text("select * from organization"))
+    result_2 = connection.execute(text("SELECT * FROM organization"))
     column_names_2 = result_2.keys()
     organizations = []
     for row in result_2.all():
       organizations.append(dict(zip(column_names_2, row)))
     return organizations
+
+
+
+    
+def load_partner_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(
+      text(f"SELECT * FROM partner WHERE partner_id ={id}")
+      )
+    rows = []
+    for row in result.all():
+      rows.append(row._mapping)
+    if len(rows) == 0:
+      return None
+    else:
+      return [dict(row) for row in rows]
+
+
+
+    
+def load_organization_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(
+      text(f"SELECT * FROM organization WHERE org_id ={id}")
+      )
+    rows = []
+    for row in result.all():
+      rows.append(row._mapping)
+    if len(rows) == 0:
+      return None
+    else:
+      return [dict(row) for row in rows]
 
