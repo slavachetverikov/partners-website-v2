@@ -22,6 +22,7 @@ def load_partners_from_db():
     for row in result.all():
       partners.append(dict(zip(column_names, row)))
     return partners
+
     
 def load_organizations_from_db():
   with engine.connect() as connection:
@@ -63,4 +64,17 @@ def load_organization_from_db(id):
       return None
     else:
       return [dict(row) for row in rows]
+
+
+
+      
+# def add_application_to_db(data):
+#   with engine.connect() as conn:
+#     query = text("INSERT INTO partner (full_name, phone, email, country) VALUES (:full_name, :phone, :email, :country)")
+  
+#     conn.execute(query, 
+#                  full_name=data.get('full_name'), 
+#                  phone=data.get('phone'),
+#                  email=data.get('email'), 
+#                  country=data.get('country'))
 

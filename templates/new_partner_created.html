@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Your Partner Created</title>
+      {% include 'bootstap.html' %}
+      {% include 'nav.html' %}
+      {% include 'banner.html' %}
+ 
+  </head>
+  <body>
+      <div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">Your partner has been created</h1>
+    <h4 class="mb-0">Full Name</h4>
+    <div class="mb-4">{{application.full_name}}</div>
+
+      <h4 class="mb-0">Email</h4>
+    <div class="mb-4">{{application.email}}</div>
+
+    <h4 class="mb-0">Phone</h4>
+    <div class="mb-4">{{application.phone}}</div>
+
+
+    <h4 class="mb-0">City</h4>
+    <div class="mb-4">{{application.country}}</div>
+
+    
+<!--     <h4 class="mb-0">Organization</h4>
+    <div class="mb-4">{{application['org_name']}}</div> -->
+
+      
+    </div>
+  </div>
+</div>
+  </body>
+</html>
