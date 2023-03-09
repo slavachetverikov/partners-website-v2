@@ -9,25 +9,59 @@
   <body>
   {% include 'nav.html' %}
   {% include 'banner.html' %}
-  <div class="container">
-  <h1 class="text-center mt-2 mb-4">Partner Information</h1>
-  <h3 class="mb-2">{{partner.full_name}}</h3> 
-  <p class="lead mt-0">{{partner.phone}}<p>
-  <h4>Email</h4> 
-    <p>{{partner.email}}<p>
-  <h4>City</h4> 
-     <p>{{partner.country}}<p>
-  <a class="btn btn-danger">Delete</a>
+    <h1 class="text-center mt-2 mb-4">Partner Information</h1>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col">
+           <h3 class="mb-0">{{partner.full_name}}</h3> 
+    <div>
+      {% if 'Active' in partner.status %}
+       <span class="badge rounded-pill text-bg-success">Active</span>
+    {% elif 'Inactive' in partner.status %}
+      <span class="badge rounded-pill text-bg-secondary">Paused Partnership</span>
+          {% endif %}
+    </div>
+    <div>
+      <p class="lead mt-2">{{partner.phone}}</p>
+        <h4>Email</h4>
+      <p>{{partner.email}}</p>
+        <h4>City</h4> 
+      <p>{{partner.country}}</p>
+       <a type="button" class="mb-4 btn btn-outline-info">Edit Info</a>
+      </div>
+      {% if 'Active' in partner.status %}
+      <div>
+       <a type="button" class="btn btn-light">Pause Partnership</a>
+              <a class="btn btn-danger">Delete</a>
+      </div>
+    {% elif 'Inactive' in partner.status %}
+        <div>
+       <a type="button" class="btn btn-secondary">Paused</a>
+       <a type="button" class="btn btn-warning">Resume Partnership</a>
+        </div>
+          {% endif %}
+    </div>
+    <div class="col">
+      <h4>Connected organizations</h4>
+        <h4 style="color:rgb(120,120,120); margin-bottom:4px;">No organization is found
+      <button type="button" class="btn btn-link">Connect</button></h4>
+    </div>
+  </div>
 </div>
+
+ 
+
+
+
+    
        {% include "footer.html" %}
   </body>
-
 </html>
 
 
- 
+
 
 
 
